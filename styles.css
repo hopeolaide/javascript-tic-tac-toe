@@ -53,3 +53,36 @@ body {
   position: absolute; /* Allows you to overlay the circles on the tile and keeps the tile number in place.*/
   /* z-index: 1; */
 }
+
+.cross {
+  height: 180px;
+  width: 180px;
+  /* position: relative; */
+  position: absolute;
+
+  transform: rotate(45deg);
+
+
+}
+
+.cross:before, .cross:after {
+  content: "";
+  position: absolute;
+  background-color: darkslateblue;
+
+}
+
+.cross:before {
+  height: 100%;
+  width: 30%;
+  left: 50%;
+  margin-left: -15%;
+
+}
+.cross:after {
+  height: 30%;
+  width: 100%;
+  top: 50%;
+  margin-top: -15%;
+
+}
