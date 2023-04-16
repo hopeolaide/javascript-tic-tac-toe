@@ -8,6 +8,7 @@
 - [ ] Light mode
 - [ ] Dark mode
 - [ ] Responsive
+- [ ] 3D features (X's and O's)
 - [ ] Disability-friendly
 - [ ] More to come... TBD
 
