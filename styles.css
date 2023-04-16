@@ -50,6 +50,6 @@ body {
   border: 15px solid pink;
   box-sizing: border-box;
   color: pink;
-  position: absolute; /* Allows you to overlay the circles on the tile keeps the tile number in place.*/
+  position: absolute; /* Allows you to overlay the circles on the tile and keeps the tile number in place.*/
   /* z-index: 1; */
 }
