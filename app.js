@@ -40,8 +40,8 @@ function addMove(e) {
     if (checkWin()) {
 		move = move === "circle" ? "cross" : "circle";
         statusDisplay.textContent = `${move} wins!`;
-		
-        resetBoard();
+
+        // resetBoard();
     } else if (checkDraw()) {
         statusDisplay.textContent = "It's a draw!";
         resetBoard();
@@ -86,11 +86,21 @@ function checkDraw() {
 resetButton.addEventListener("click", resetBoard);
 
 function resetBoard() {
-    /* This function resets the board by  using the fill method to clear the tiles array. */
-    tiles.fill("");
-    const moveDisplays = document.querySelectorAll(".circle, .cross");
-    /* We iterate the moveDisplays array and removing each selected element with the class of "circle" or "cross" from the DOM */
-    moveDisplays.forEach((moveDisplay) => {
-        moveDisplay.remove();
-    });
-}
+	// Clear the tiles array
+	tiles.fill("");
+  
+	// Remove the move displays from the board
+	const moveDisplays = document.querySelectorAll(".circle, .cross");
+	moveDisplays.forEach((moveDisplay) => {
+	  moveDisplay.remove();
+	});
+  
+	// Add event listeners to each tile element. Need to add them again after resetting the board or else nothing will happen when you click a tile to add a move.
+	const tileElements = document.querySelectorAll(".tile");
+	tileElements.forEach((tileElement) => {
+	  tileElement.addEventListener("click", addMove);
+	});
+  
+	// Update the status display
+	statusDisplay.textContent = "Make a move!";
+  }
