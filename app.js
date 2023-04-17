@@ -38,8 +38,10 @@ function addMove(e) {
     statusDisplay.textContent = `${move}'s turn`;
 
     if (checkWin()) {
+		move = move === "circle" ? "cross" : "circle";
         statusDisplay.textContent = `${move} wins!`;
-        // resetBoard();
+		
+        resetBoard();
     } else if (checkDraw()) {
         statusDisplay.textContent = "It's a draw!";
         resetBoard();
